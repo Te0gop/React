@@ -1,25 +1,25 @@
 import { useState } from "react";
 
 interface Props {
-//   todoValue: string;
+  todoValue: string;
   handleAddTodos: (item: string) => void;
+  setTodoValue: (item: string) => void;
 }
 
 export default function TodoInput(props: Props) {
-  const [todoValue, setTodoValue] = useState("");
   
   return (
     <header>
       <input
-        value={todoValue}
+        value={props.todoValue}
         onChange={(e) => {
-          setTodoValue(e.target.value);
+          props.setTodoValue(e.target.value);
         }}
         placeholder="Enter todo..."
       />
       <button onClick={() => {
-        props.handleAddTodos(todoValue)
-        setTodoValue('')
+        props.handleAddTodos(props.todoValue)
+        props.setTodoValue('')
       }}>Add</button>
     </header>
   );

@@ -4,6 +4,7 @@ import TodoCard from "./TodoCard";
 interface Props {
   todos: string[];
   handleDeleteTodo: (item: number) => void;
+  handleEditTodo: (item: number) => void;
 }
 
 export default function TodoList(props: Props) {
